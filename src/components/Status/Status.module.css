@@ -1,0 +1,10 @@
+.statusContainer {
+  display: flex;
+  margin-left: 1.5rem;
+  justify-content: space-between;
+  width: 56rem;
+}
+
+.statusContainer button {
+  cursor: pointer;
+}

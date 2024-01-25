@@ -1,0 +1,44 @@
+/* .formContainer {
+  width: 40vw;
+  margin: auto;
+} */
+
+.form {
+  width: 30rem;
+  margin: auto;
+  margin-top: 9rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formLogo {
+  width: 10rem;
+}
+
+.checkLabel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 16.4rem;
+}
+
+.check {
+  margin-right: 0.9rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.checkLabel label {
+  font-size: 0.8rem;
+  color: 333;
+}
+
+.formLink {
+  text-decoration: none;
+  margin-top: 1rem;
+  color: #333;
+  font-size: 0.8rem;
+}

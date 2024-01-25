@@ -1,0 +1,187 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Login from "./pages/Login/Login";
+import RequireAuth from "./pages/Auth/RequireAuth";
+import Home from "./pages/Home/Home";
+import Customers from "./pages/Customers/Customers";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Ratings from "./pages/Ratings/Ratings";
+import Promotional from "./pages/Promotional/Promotional";
+import Reports from "./pages/Reports/Reports";
+import AllBookings from "./pages/Bookings/AllBookings";
+import NowBookings from "./pages/Bookings/NowBookings";
+import AdvancedBookings from "./pages/Bookings/AdvancedBookings";
+import LaterBookings from "./pages/Bookings/LaterBookings";
+import Current from "./pages/Partners/Current";
+import Pending from "./pages/Partners/Pending";
+import Paid from "./pages/Payment/Paid";
+import Received from "./pages/Payment/Received";
+import AllAdmins from "./pages/AdminSettings/AllAdmins";
+import RoleFunction from "./pages/AdminSettings/RoleFunction";
+import AddAdmin from "./pages/AdminSettings/AddAdmin";
+import Requests from "./pages/Requests/Requests";
+import CustomerNotification from "./pages/Notification/CustomerNotification/CustomerNotification";
+import PartnerNotification from "./pages/Notification/PartnerNotification/PartnerNotification";
+import CustomerEnquiry from "./pages/Enquiry/CustomerEnquiry/CustomerEnquiry";
+import PartnerEnquiry from "./pages/Enquiry/PartnerEnquiry/PartnerEnquiry";
+import Pages from "./pages/Settings/Pages/Pages";
+import Holidays from "./pages/Settings/Holidays/Holidays";
+import Pricing from "./pages/Settings/Pricing/Pricing";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "dashboard",
+    element: (
+      <RequireAuth>
+        <Dashboard />
+      </RequireAuth>
+    ),
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "booking",
+        children: [
+          {
+            path: "all-bookings",
+            element: <AllBookings />,
+          },
+          {
+            path: "now",
+            element: <NowBookings />,
+          },
+          {
+            path: "advanced",
+            element: <AdvancedBookings />,
+          },
+          {
+            path: "later",
+            element: <LaterBookings />,
+          },
+        ],
+      },
+      {
+        path: "customer",
+        element: <Customers />,
+      },
+      {
+        path: "driver",
+        children: [
+          {
+            path: "current",
+            element: <Current />,
+          },
+          {
+            path: "pending",
+            element: <Pending />,
+          },
+        ],
+      },
+      {
+        path: "ratings",
+        element: <Ratings />,
+      },
+      {
+        path: "transactions",
+
+        children: [
+          {
+            path: "paid",
+            element: <Paid />,
+          },
+          {
+            path: "received",
+            element: <Received />,
+          },
+        ],
+      },
+      {
+        path: "user-settings",
+
+        children: [
+          {
+            path: "alluser",
+            element: <AllAdmins />,
+          },
+          {
+            path: "add-admin",
+            element: <AddAdmin />,
+          },
+          {
+            path: "roles",
+            element: <RoleFunction />,
+          },
+        ],
+      },
+      {
+        path: "promotional",
+        element: <Promotional />,
+      },
+      {
+        path: "notification",
+
+        children: [
+          {
+            path: "user",
+            element: <CustomerNotification />,
+          },
+          {
+            path: "partner",
+            element: <PartnerNotification />,
+          },
+        ],
+      },
+      {
+        path: "enquiry",
+
+        children: [
+          {
+            path: "user",
+            element: <CustomerEnquiry />,
+          },
+          {
+            path: "partner",
+            element: <PartnerEnquiry />,
+          },
+        ],
+      },
+      {
+        path: "reports",
+        element: <Reports />,
+      },
+      {
+        path: "setting",
+
+        children: [
+          {
+            path: "pages",
+            element: <Pages />,
+          },
+          {
+            path: "holidays",
+            element: <Holidays />,
+          },
+          {
+            path: "pricing",
+            element: <Pricing />,
+          },
+        ],
+      },
+      {
+        path: "requests",
+        element: <Requests />,
+      },
+    ],
+  },
+]);
+
+const Root = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default Root;

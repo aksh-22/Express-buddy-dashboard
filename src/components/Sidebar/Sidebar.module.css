@@ -1,0 +1,90 @@
+.sidebar {
+  width: 17vw;
+  height: 100vh;
+  background-color: #333;
+  overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.circle {
+  width: 6rem;
+  height: 6rem;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.valetLogo {
+  width: 6rem;
+}
+
+.rule {
+  width: 14rem;
+  border: 0.1px solid #4f5962;
+  margin: auto;
+}
+
+.tab {
+  list-style: none;
+  height: 35rem;
+  margin: 0.7rem 2rem 0.7rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spanText {
+  margin-left: 1.6rem;
+}
+
+.increaseSvg svg {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+/* li:hover {
+  background-color: #8b8989;
+  border-radius: 0.6rem;
+} */
+
+/* 
+.tab li span {
+  margin-right: 1.4rem;
+}
+
+.tab li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.text {
+  color: #fff;
+  font-size: 0.7rem;
+  margin-top: 5rem;
+  margin-left: 1rem;
+}
+
+.boxBackground {
+  width: 11rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 1rem;
+  margin: 1rem auto;
+}
+
+.deliveryLogo {
+  width: 4rem;
+} */

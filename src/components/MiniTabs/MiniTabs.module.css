@@ -1,0 +1,23 @@
+.activeTab {
+  background-color: #cf1c34;
+  border-radius: 0.2rem;
+}
+
+.inactiveTab {
+  background-color: transparent;
+}
+
+.links {
+  display: flex;
+  margin-left: 3rem;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.links:hover {
+  background-color: #8b8989;
+  border-radius: 0.2rem;
+}

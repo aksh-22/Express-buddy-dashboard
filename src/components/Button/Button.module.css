@@ -1,0 +1,81 @@
+.formBtn {
+  width: 16.3rem;
+  padding: 0.7rem;
+  color: #fff;
+  background-color: #d01c30;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.sidebar {
+  background: transparent;
+  border: none;
+  display: flex;
+  padding: 0.6rem 0.4rem;
+  align-items: center;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.filledActive {
+  background-color: #cf1c34;
+  border-radius: 0.2rem;
+}
+
+.outlineActive {
+  background-color: transparent;
+  border: 0.1rem solid #cf1c34;
+  border-radius: 0.2rem;
+}
+
+.btnBooking {
+  padding: 0.4rem 0.6rem;
+  border-radius: 1rem;
+  color: #cf1c34;
+  cursor: pointer;
+  word-spacing: 0.1rem;
+}
+
+.btnBooking:hover {
+  background-color: #cf1c34;
+  color: #fff;
+}
+
+.btnStatus {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.3rem 2rem;
+}
+
+.btnPending {
+  background-color: #f5d7db;
+  color: #cf1c34;
+}
+
+.btnAssigned {
+  background-color: #f9d65c4a;
+  color: #de8908;
+}
+
+.btnCompleted {
+  background-color: #80b0732b;
+  color: #2b8945;
+}
+
+.btnNoShow {
+  background-color: #d8d8d8a6;
+  color: #333333;
+}
+
+.btnAccepted {
+  background-color: #96bbe82b;
+  color: #2356da;
+}
+
+.btnAll {
+  background-color: #333333;
+  color: #fff;
+}

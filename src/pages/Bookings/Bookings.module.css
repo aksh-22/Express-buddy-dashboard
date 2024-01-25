@@ -1,0 +1,55 @@
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.listContainer {
+  font-size: 0.88rem;
+  margin: auto;
+  width: 81vw;
+}
+
+.listContainer td {
+  padding: 2rem 0.3rem;
+  vertical-align: top;
+  color: #333;
+}
+
+.customer {
+  width: 7rem;
+}
+
+.date {
+  width: 6rem;
+}
+
+.route {
+  display: -webkit-box;
+  max-width: 14rem;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.assigned {
+  width: 6rem;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status a {
+  margin-left: 0.5rem;
+}
+
+.eye {
+  width: 1rem;
+}
+
+/* tr,
+td {
+  border-bottom: 1px solid #ccc;
+} */
