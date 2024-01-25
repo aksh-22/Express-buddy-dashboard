@@ -26,6 +26,7 @@ import PartnerEnquiry from "./pages/Enquiry/PartnerEnquiry/PartnerEnquiry";
 import Pages from "./pages/Settings/Pages/Pages";
 import Holidays from "./pages/Settings/Holidays/Holidays";
 import Pricing from "./pages/Settings/Pricing/Pricing";
+import { loader as bookingLoader } from "src/pages/Bookings/booking.loader";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,8 @@ const router = createBrowserRouter([
           {
             path: "all-bookings",
             element: <AllBookings />,
+            loader: bookingLoader,
+            errorElement: <div>Oops! There was an error.</div>,
           },
           {
             path: "now",

@@ -1,7 +1,7 @@
 import Search from "src/assets/svg/search.svg";
 import Filter from "src/assets/svg/filter.svg";
 import classes from "./BookingHeader.module.css";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 import Status from "../Status/Status";
@@ -10,16 +10,17 @@ import { useState } from "react";
 type Props = { heading: string };
 
 export default function BookingHeader({ heading }: Props) {
-  const [isAssigned, setIsAssigned] = useState(false);
-  const [isToggled, setIsToggled] = useState(false);
+  const [isAssigned, setIsAssigned] = useState(true);
+  const [isToggled, setIsToggled] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleAssign = () => {
-    const assignData = {
-      status: "PENDING",
-    };
+  function handleAssign() {
     setIsAssigned((prevIsAssigned) => !prevIsAssigned);
-    if (!isAssigned) console.log(assignData.status);
-  };
+    if (!isAssigned) console.log("True");
+
+    if (!isAssigned) setSearchParams({ status: "PENDING" });
+    else setSearchParams();
+  }
 
   const handleToggle = () => {
     setIsToggled((prevIsToggled) => !prevIsToggled);

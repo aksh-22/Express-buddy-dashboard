@@ -8,7 +8,13 @@ function notify(errMessage: string) {
 
 export const axiosError = async (err: AxiosError<any>) => {
   // console.error("err", JSON.stringify(err.response, null, 2));
-  notify(err.response?.data?.message);
+  const errorMessage =
+    typeof err.response?.data?.message === "string"
+      ? err.response?.data?.message
+      : err.response?.data?.message?.[0];
+
+  // console.log("err.response?.data: ", err.response?.data?.message);
+  notify(errorMessage);
   // toast({
   //   title: err.response?.data?.message ?? "Something went wrong",
   //   status: "error",
