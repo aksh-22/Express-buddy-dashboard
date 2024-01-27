@@ -78,71 +78,73 @@ export default function AllBookings() {
           data-testid="loader"
         />
       ) : (
-        <table className={classes.listContainer}>
-          {bookingList?.map((elem: any) => (
-            <tbody key={elem._id}>
-              <tr>
-                <td>#{elem.BookingId}</td>
-                <td>
-                  <Capitalize str={elem.veletType} />
-                </td>
-                <td>
-                  $
-                  {elem?.totalPayableAmount &&
-                    elem.totalPayableAmount.toFixed(2)}
-                  <br /> (<Capitalize str={elem.paymentType} />)
-                </td>
-                <td className={classes.customer}>
-                  {elem.userFullName} <br /> {elem.user_detail.phoneCode}-
-                  {elem.user_detail.phoneNumber} <br />
-                  <Capitalize str={elem.user_detail.vehicleType} />
-                </td>
-                <td className={classes.date}>
-                  {dayjs(elem.BookingAt * 1000)
-                    .tz(timeZone)
-                    .format("DD MMM YYYY, hh:mm A")}
-                </td>
-                <td className={classes.date}>
-                  {dayjs(elem.createdAt).format("DD MMM YYYY, hh:mm A")}
-                </td>
-                <td>
-                  <p className={classes.route}>
-                    {[elem.startPoint, ...elem.otherPoints, elem.endPoint].map(
-                      (otherPoint: any) => {
-                        return (
-                          <CapitalizeSentence
-                            key={otherPoint._id}
-                            str={otherPoint.address}
-                          />
-                        );
-                      }
-                    )}
-                  </p>
-                </td>
-                <td className={classes.assigned}>
-                  {elem?.status &&
-                  elem.status === "PENDING" &&
+        bookingList?.map((elem: any) => (
+          <>
+            <ul key={elem._id} className={classes.listContainer}>
+              <li>#{elem.BookingId}</li>
+              <li>
+                <Capitalize str={elem.veletType} />
+              </li>
+              <li>
+                $
+                {elem?.totalPayableAmount && elem.totalPayableAmount.toFixed(2)}
+                <br /> (<Capitalize str={elem.paymentType} />)
+              </li>
+              <li className={classes.nameWrap}>
+                {elem.userFullName} <br /> {elem.user_detail.phoneCode}-
+                {elem.user_detail.phoneNumber} <br />
+                (<Capitalize str={elem.user_detail.vehicleType} />)
+              </li>
+              <li>
+                {dayjs(elem.BookingAt * 1000)
+                  .tz(timeZone)
+                  .format("DD MMM YYYY,")}
+                <br />
+                {dayjs(elem.BookingAt * 1000)
+                  .tz(timeZone)
+                  .format("hh:mm A")}
+              </li>
+              <li>
+                {dayjs(elem.createdAt).format("DD MMM YYYY,")}
+                <br />
+                {dayjs(elem.createdAt).format("hh:mm A")}
+              </li>
+              <li className={classes.route}>
+                {[elem.startPoint, ...elem.otherPoints, elem.endPoint].map(
+                  (otherPoint: any) => {
+                    return (
+                      <CapitalizeSentence
+                        key={otherPoint._id}
+                        str={otherPoint.address}
+                      />
+                    );
+                  }
+                )}
+              </li>
+              <li className={classes.nameWrap}>
+                {elem?.status &&
+                elem.status === "PENDING" &&
+                elem.assignedFullName === null ? (
+                  <Button btnStyle="btnBooking" tabStyle="outlineActive">
+                    To Assign
+                  </Button>
+                ) : elem.status === "CANCELLED" &&
                   elem.assignedFullName === null ? (
-                    <Button btnStyle="btnBooking" tabStyle="outlineActive">
-                      To Assign
-                    </Button>
-                  ) : elem.status === "CANCELLED" &&
-                    elem.assignedFullName === null ? (
-                    "--"
-                  ) : (
-                    elem.assignedFullName
-                  )}
-                </td>
-                <td className={classes.status}>
-                  {renderStatus(elem)}
-                  <Link to="">
-                    <img src={Eye} className={classes.eye} alt="Eye Icon" />
-                  </Link>
-                </td>
-              </tr>
-            </tbody>
-          ))}
-        </table>
+                  "--"
+                ) : (
+                  elem.assignedFullName
+                )}
+              </li>
+              <li className={classes.linkButton}>
+                {renderStatus(elem)}
+                <Link to="">
+                  <img src={Eye} className={classes.eye} alt="Eye Icon" />
+                </Link>
+              </li>
+            </ul>
+            <hr className={classes.containerRule} />
+          </>
+        ))
       )}
     </div>
   );

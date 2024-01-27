@@ -24,12 +24,12 @@ export const SidebarData: any = [
       {
         id: "booking/all-bookings",
         text: "All Bookings",
-        path: "booking/all-bookings",
+        path: "booking/all-bookings?status=PENDING",
       },
       {
         id: "booking/now",
         text: "Now Bookings",
-        path: "booking/now",
+        path: "booking/now?bookingType=NOW",
       },
       {
         id: "booking/advanced",

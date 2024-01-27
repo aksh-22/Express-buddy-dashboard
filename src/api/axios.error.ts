@@ -13,7 +13,6 @@ export const axiosError = async (err: AxiosError<any>) => {
       ? err.response?.data?.message
       : err.response?.data?.message?.[0];
 
-  // console.log("err.response?.data: ", err.response?.data?.message);
   notify(errorMessage);
   // toast({
   //   title: err.response?.data?.message ?? "Something went wrong",

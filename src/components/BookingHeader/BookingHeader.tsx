@@ -3,28 +3,22 @@ import Filter from "src/assets/svg/filter.svg";
 import classes from "./BookingHeader.module.css";
 import { Link, useSearchParams } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-
 import Status from "../Status/Status";
+
 import { useState } from "react";
 
 type Props = { heading: string };
 
 export default function BookingHeader({ heading }: Props) {
   const [isAssigned, setIsAssigned] = useState(true);
-  const [isToggled, setIsToggled] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
 
   function handleAssign() {
     setIsAssigned((prevIsAssigned) => !prevIsAssigned);
-    if (!isAssigned) console.log("True");
 
     if (!isAssigned) setSearchParams({ status: "PENDING" });
     else setSearchParams();
   }
-
-  const handleToggle = () => {
-    setIsToggled((prevIsToggled) => !prevIsToggled);
-  };
 
   return (
     <>
@@ -69,9 +63,7 @@ export default function BookingHeader({ heading }: Props) {
           <span>To Assign</span>
         </div>
         <div className={classes.toggleAssign}>
-          <ToggleSwitch toggle={isToggled} onToggle={handleToggle} />
-          <span>Show Status</span>
-          {isToggled ? <Status /> : null}
+          <Status />
         </div>
         <div className={classes.entries}>
           <span>Show</span>
@@ -88,21 +80,18 @@ export default function BookingHeader({ heading }: Props) {
       </div>
       <hr />
       <>
-        {/* <table className={classes.tableContainer}>
-          <thead>
-            <tr>
-              <th>Booking ID</th>
-              <th>Order Type</th>
-              <th>Fees</th>
-              <th>Customer</th>
-              <th>Pick Up Schedule</th>
-              <th>Created At</th>
-              <th>Route</th>
-              <th>Assigned To</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-        </table> */}
+        <ul className={classes.listHeaderContainer}>
+          <li>Booking ID</li>
+          <li>Order Type</li>
+          <li>Fees</li>
+          <li>Customer</li>
+          <li>▼Pick Up Schedule</li>
+          <li>▼Created At</li>
+          <li>Route</li>
+          <li>Assigned To</li>
+          <li className={classes.headerLink}>Status</li>
+        </ul>
+        <hr className={classes.headerRule} />
       </>
     </>
   );
