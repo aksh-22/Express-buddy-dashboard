@@ -29,17 +29,17 @@ export const SidebarData: any = [
       {
         id: "booking/now",
         text: "Now Bookings",
-        path: "booking/now?bookingType=NOW",
+        path: "booking/now?bookingType=NOW&status=PENDING",
       },
       {
         id: "booking/advanced",
         text: "Advanced Bookings",
-        path: "booking/advanced",
+        path: "booking/advanced?bookingType=ADVANCE&status=PENDING",
       },
       {
         id: "booking/later",
         text: "Later Bookings",
-        path: "booking/later",
+        path: "booking/later?bookingType=LATER&status=PENDING",
       },
     ],
   },

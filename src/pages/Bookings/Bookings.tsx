@@ -19,7 +19,7 @@ const override = {
   margin: "10rem auto",
 };
 
-export default function AllBookings() {
+export default function Bookings() {
   const { bookingList }: any = useLoaderData();
   const navigation = useNavigation();
 
@@ -68,7 +68,7 @@ export default function AllBookings() {
 
   return (
     <div className={classes.container}>
-      <BookingHeader heading="All Bookings" />
+      <BookingHeader />
       {navigation.state === "loading" ? (
         <DotLoader
           color="#cf1c34"
@@ -77,10 +77,10 @@ export default function AllBookings() {
           aria-label="Loading Spinner"
           data-testid="loader"
         />
-      ) : (
+      ) : bookingList.length ? (
         bookingList?.map((elem: any) => (
-          <>
-            <ul key={elem._id} className={classes.listContainer}>
+          <div key={elem._id}>
+            <ul className={classes.listContainer}>
               <li>#{elem.BookingId}</li>
               <li>
                 <Capitalize str={elem.veletType} />
@@ -143,8 +143,10 @@ export default function AllBookings() {
               </li>
             </ul>
             <hr className={classes.containerRule} />
-          </>
+          </div>
         ))
+      ) : (
+        <p className={classes.noData}>No data available in table</p>
       )}
     </div>
   );

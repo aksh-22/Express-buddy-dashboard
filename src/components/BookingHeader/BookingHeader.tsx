@@ -7,23 +7,52 @@ import Status from "../Status/Status";
 
 import { useState } from "react";
 
-type Props = { heading: string };
-
-export default function BookingHeader({ heading }: Props) {
+export default function BookingHeader() {
   const [isAssigned, setIsAssigned] = useState(true);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams({
+    status: "PENDING",
+  });
 
   function handleAssign() {
-    setIsAssigned((prevIsAssigned) => !prevIsAssigned);
+    setIsAssigned((prevAssigned) => !prevAssigned);
 
     if (!isAssigned) setSearchParams({ status: "PENDING" });
     else setSearchParams();
   }
 
+  const handleOrder = (e: any) => {
+    const data: any = {
+      type: searchParams.get("type"),
+      status: searchParams.get("status"),
+      [e.target.name]: e.target.value,
+    };
+    // if (searchParams.get("type") === "ALL")
+    //   setSearchParams({ status: searchParams.get("status") });
+    // else if (searchParams.get("status"))
+    //   setSearchParams({ type: searchParams.get("type") });
+    setSearchParams(data);
+  };
+
+  const renderHeading = () => {
+    switch (searchParams.get("bookingType")) {
+      case "NOW":
+        return <p className={classes.heading}>Now Booking</p>;
+
+      case "ADVANCE":
+        return <p className={classes.heading}>Advanced Booking</p>;
+
+      case "LATER":
+        return <p className={classes.heading}>Later Booking</p>;
+
+      default:
+        return <p className={classes.heading}>All Bookings</p>;
+    }
+  };
+
   return (
     <>
       <div className={classes.headerContainer}>
-        <p className={classes.heading}>{heading}</p>
+        {renderHeading()}
         <div className={classes.filters}>
           <input
             type="search"
@@ -33,27 +62,40 @@ export default function BookingHeader({ heading }: Props) {
           <img className={classes.searchIcon} src={Search} alt="Search Icon" />
           <img className={classes.filterIcon} src={Filter} alt="Filter Icon" />
           <p className={classes.para}>Order Type</p>
+
           <div className={classes.wrapper}>
-            <select className={classes.filter}>
-              <option>All</option>
-              <option>Normal</option>
-              <option>Priority</option>
+            <select
+              value={searchParams?.get("type")}
+              name="type"
+              onChange={handleOrder}
+              className={classes.filter}
+            >
+              <option value="ALL">All</option>
+              <option value="NORMAL">Normal</option>
+              <option value="PRIORITY">Priority</option>
             </select>
           </div>
           <p className={classes.para}>Status</p>
+
           <div className={classes.wrapper}>
-            <select className={classes.filter}>
-              <option>All</option>
-              <option>Assigned</option>
-              <option>Cancelled</option>
-              <option>Completed</option>
-              <option>Declined</option>
-              <option>Driver OTW</option>
-              <option>In Transit</option>
-              <option>No Show</option>
-              <option>Pending</option>
+            <select
+              value={searchParams?.get("status")}
+              name="status"
+              onChange={handleOrder}
+              className={classes.filter}
+            >
+              <option value="ALL">All</option>
+              <option value="ASSIGNED">Assigned</option>
+              <option value="CANCELLED">Cancelled</option>
+              <option value="COMPLETED">Completed</option>
+              <option value="DECLINED">Declined</option>
+              <option value="OTW">Driver OTW</option>
+              <option value="IN_TRANSIT">In Transit</option>
+              <option value="CUSTOMER_NO_SHOW">No Show</option>
+              <option value="PENDING">Pending</option>
             </select>
           </div>
+
           <Link className={classes.link} to="">
             <p>Clear Filters</p>
           </Link>

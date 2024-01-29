@@ -7,10 +7,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Ratings from "./pages/Ratings/Ratings";
 import Promotional from "./pages/Promotional/Promotional";
 import Reports from "./pages/Reports/Reports";
-import AllBookings from "./pages/Bookings/AllBookings";
-import NowBookings from "./pages/Bookings/NowBookings";
-import AdvancedBookings from "./pages/Bookings/AdvancedBookings";
-import LaterBookings from "./pages/Bookings/LaterBookings";
+import Bookings from "./pages/Bookings/Bookings";
 import Current from "./pages/Partners/Current";
 import Pending from "./pages/Partners/Pending";
 import Paid from "./pages/Payment/Paid";
@@ -27,7 +24,6 @@ import Pages from "./pages/Settings/Pages/Pages";
 import Holidays from "./pages/Settings/Holidays/Holidays";
 import Pricing from "./pages/Settings/Pricing/Pricing";
 import { bookingLoader } from "src/pages/Bookings/booking.loader";
-import { bookingTypeLoader } from "./pages/Bookings/bookingType.loader";
 
 const router = createBrowserRouter([
   {
@@ -51,22 +47,27 @@ const router = createBrowserRouter([
         children: [
           {
             path: "all-bookings",
-            element: <AllBookings />,
+            element: <Bookings />,
             loader: bookingLoader,
             errorElement: <div>Oops! There was an error.</div>,
           },
           {
             path: "now",
-            element: <NowBookings />,
-            loader: bookingTypeLoader,
+            element: <Bookings />,
+            loader: bookingLoader,
+            errorElement: <div>Oops! There was an error.</div>,
           },
           {
             path: "advanced",
-            element: <AdvancedBookings />,
+            element: <Bookings />,
+            loader: bookingLoader,
+            errorElement: <div>Oops! There was an error.</div>,
           },
           {
             path: "later",
-            element: <LaterBookings />,
+            element: <Bookings />,
+            loader: bookingLoader,
+            errorElement: <div>Oops! There was an error.</div>,
           },
         ],
       },

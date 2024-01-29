@@ -42,3 +42,8 @@
   width: 1rem;
   margin-left: 0.5rem;
 }
+
+.noData {
+  font-size: 0.9rem;
+  text-align: center;
+}
