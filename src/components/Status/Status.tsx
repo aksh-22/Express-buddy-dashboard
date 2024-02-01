@@ -6,7 +6,11 @@ import { useNavigation, useSearchParams } from "react-router-dom";
 import { StatusData } from "./StatusData";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
-export default function Status() {
+type Props = {
+  setIsAssigned: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function Status({ setIsAssigned }: Props) {
   const [bookingsCount, setBookingsCount] = useState<any>({});
   const [searchParams, setSearchParams] = useSearchParams();
   const navigation = useNavigation();
@@ -41,6 +45,7 @@ export default function Status() {
               btnStyle={elem.style}
               tabStyle="btnStatus"
               onClick={() => {
+                setIsAssigned(false);
                 elem.status
                   ? setSearchParams({ status: elem?.status })
                   : setSearchParams();

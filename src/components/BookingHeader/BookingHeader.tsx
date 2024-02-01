@@ -1,36 +1,81 @@
 import Search from "src/assets/svg/search.svg";
 import Filter from "src/assets/svg/filter.svg";
 import classes from "./BookingHeader.module.css";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import Status from "../Status/Status";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function BookingHeader() {
   const [isAssigned, setIsAssigned] = useState(true);
+
+  const [search, setSearch] = useState("");
+
   const [searchParams, setSearchParams] = useSearchParams({
+    type: "",
+    bookingType: "",
     status: "PENDING",
+    search: "",
   });
+
+  const booking = useLocation().pathname.split("/")[3];
 
   function handleAssign() {
     setIsAssigned((prevAssigned) => !prevAssigned);
 
-    if (!isAssigned) setSearchParams({ status: "PENDING" });
-    else setSearchParams();
+    if (!isAssigned) {
+      switch (booking) {
+        case "now":
+          setSearchParams({ bookingType: "NOW", status: "PENDING" });
+          break;
+
+        case "advanced":
+          setSearchParams({ bookingType: "ADVANCE", status: "PENDING" });
+          break;
+
+        case "later":
+          setSearchParams({ bookingType: "LATER", status: "PENDING" });
+          break;
+
+        default:
+          setSearchParams({ status: "PENDING" });
+      }
+    } else {
+      booking !== "all-bookings"
+        ? setSearchParams({ bookingType: booking.toUpperCase() })
+        : setSearchParams({});
+    }
   }
 
   const handleOrder = (e: any) => {
-    const data: any = {
-      type: searchParams.get("type"),
-      status: searchParams.get("status"),
-      [e.target.name]: e.target.value,
-    };
-    // if (searchParams.get("type") === "ALL")
-    //   setSearchParams({ status: searchParams.get("status") });
-    // else if (searchParams.get("status"))
-    //   setSearchParams({ type: searchParams.get("type") });
+    const data: any = {};
+
+    searchParams.get("bookingType")
+      ? (data.bookingType = searchParams.get("bookingType"))
+      : null;
+
+    if (e.target.value !== "ALL") {
+      if (e.target.name === "type") {
+        data.type = e.target.value;
+        data.status = searchParams.get("status");
+      } else {
+        data.status = e.target.value;
+        data.type = searchParams.get("type");
+      }
+    } else {
+      if (e.target.name === "type") {
+        data.status = searchParams.get("status");
+      } else {
+        data.type = searchParams.get("type");
+      }
+    }
+
     setSearchParams(data);
+
+    e.target.value !== "PENDING" && e.target.name === "status"
+      ? setIsAssigned(false)
+      : setIsAssigned(true);
   };
 
   const renderHeading = () => {
@@ -49,6 +94,54 @@ export default function BookingHeader() {
     }
   };
 
+  const handleSearch = (e: any) => {
+    setSearch(e.target.value);
+  };
+
+  useEffect(
+    function () {
+      const data = {
+        status: searchParams.get("status"),
+        type: searchParams.get("type"),
+      };
+      searchParams.get("bookingType")
+        ? (data.bookingType = searchParams.get("bookingType"))
+        : null;
+      search.length
+        ? setSearchParams({
+            ...data,
+            search,
+          })
+        : setSearchParams({
+            ...data,
+            search: "",
+          });
+    },
+    [search]
+  );
+
+  // function debounce  (callback, wait) {
+  //   let timer;
+
+  //   const debouncedFunc = () => {
+  //      checking whether the waiting time has passed
+  //     if (shouldCallCallback(Date.now())) {
+  //       callback();
+  //     } else {
+  //        if time hasn't passed yet, restart the timer
+  //       timer = startTimer(callback);
+  //     }
+  //   }
+
+  //   return debouncedFunc;
+  // }
+
+  // const debouncedOnChange = debounce(handleChange, 500);
+
+  const type: any = searchParams?.get("type");
+  const status: any =
+    searchParams?.get("status") !== null ? searchParams.get("status") : "ALL";
+
   return (
     <>
       <div className={classes.headerContainer}>
@@ -57,6 +150,8 @@ export default function BookingHeader() {
           <input
             type="search"
             placeholder="Search"
+            value={search}
+            onChange={handleSearch}
             className={classes.search}
           />
           <img className={classes.searchIcon} src={Search} alt="Search Icon" />
@@ -65,7 +160,7 @@ export default function BookingHeader() {
 
           <div className={classes.wrapper}>
             <select
-              value={searchParams?.get("type")}
+              value={type}
               name="type"
               onChange={handleOrder}
               className={classes.filter}
@@ -79,7 +174,7 @@ export default function BookingHeader() {
 
           <div className={classes.wrapper}>
             <select
-              value={searchParams?.get("status")}
+              value={status}
               name="status"
               onChange={handleOrder}
               className={classes.filter}
@@ -105,7 +200,7 @@ export default function BookingHeader() {
           <span>To Assign</span>
         </div>
         <div className={classes.toggleAssign}>
-          <Status />
+          <Status setIsAssigned={setIsAssigned} />
         </div>
         <div className={classes.entries}>
           <span>Show</span>

@@ -6,7 +6,8 @@ export async function bookingLoader({ request }: any) {
   const status = url.searchParams.get("status");
   const bookingType = url.searchParams.get("bookingType");
   const page = url.searchParams.get("page");
-  const params = { type, status, bookingType, page };
+  const search = url.searchParams.get("search");
+  const params = { type, status, bookingType, page, search };
   const res = await bookingApi({ params });
   return { bookingList: res?.data?.bookings ?? [] };
 }

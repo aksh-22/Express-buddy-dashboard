@@ -1,0 +1,8 @@
+.secondaryInput {
+  padding: 0.5rem;
+  display: inline-block;
+  margin: 1rem 0;
+  background: #fff;
+  border-radius: 0.1rem;
+  width: 25rem;
+}
