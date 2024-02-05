@@ -9,5 +9,7 @@ export async function bookingLoader({ request }: any) {
   const search = url.searchParams.get("search");
   const params = { type, status, bookingType, page, search };
   const res = await bookingApi({ params });
-  return { bookingList: res?.data?.bookings ?? [] };
+
+  // return { bookingList: res?.data?.bookings ?? [] };
+  return { bookingList: res ?? [] };
 }

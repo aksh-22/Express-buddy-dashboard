@@ -49,6 +49,31 @@
   width: 1.4rem;
 }
 
+.miniText {
+  font-size: 0.7rem;
+  color: #fff;
+  margin-left: 1.8rem;
+  margin-bottom: -0.6rem;
+}
+
+.rectangle {
+  width: 12rem;
+  height: 3rem;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.sideRule {
+  margin: 1rem 1.6rem;
+  border: 0.1px solid #5f707e;
+}
+
 /* li:hover {
   background-color: #8b8989;
   border-radius: 0.6rem;

@@ -68,6 +68,7 @@
 .toggleAssign {
   display: flex;
   align-items: center;
+  justify-content: end;
   margin-top: 1rem;
   margin-left: -0.3rem;
 }
@@ -98,22 +99,47 @@
 
 .options select {
   border: none;
+  outline: none;
 }
 
 .listHeaderContainer {
   font-weight: 600;
   display: grid;
-  grid-template-columns: 0.8fr 0.7fr 0.6fr 1fr 1.1fr 0.9fr 1.9fr 0.9fr 1.2fr;
+  grid-template-columns: 1fr 0.9fr 1fr 1.2fr 1fr 1.1fr 1fr 1fr 0.75fr 0.6fr;
   list-style: none;
   font-size: 0.8rem;
-  margin: 1rem 1rem 0rem 1rem;
+  margin: 1rem 1rem 0rem 0.5rem;
+}
+
+.listDataContainer {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr 1fr 1.2fr 1fr 1.1fr 1fr 1fr 0.7fr 0.6fr;
+  list-style: none;
+  font-size: 0.8rem;
+  margin: 1rem 1rem 0rem 0.5rem;
 }
 
 .headerRule {
-  margin: 1rem;
+  margin: 1rem 0rem;
   border: 1px solid #c1c1c1;
+}
+
+.normalRule {
+  margin: 1rem 0rem;
+  border: 0.5px solid #c1c1c1;
 }
 
 .headerLink {
   margin-left: 3.2rem;
+}
+
+.eye {
+  margin-left: 0.8rem;
+  width: 1rem;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

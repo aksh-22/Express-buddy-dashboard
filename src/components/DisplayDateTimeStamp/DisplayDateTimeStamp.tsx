@@ -60,7 +60,7 @@ export default function DisplayDateTimeStamp({
         {isEditGeneral ? (
           <>
             <select
-              className={`${classes.dateSelect} ${classes.myDropDown}`}
+              className={`${classes.dateSelect}`}
               value={generalData.min}
               name="min"
               onChange={handleChange}
@@ -141,9 +141,6 @@ export default function DisplayDateTimeStamp({
 //   background-color: #3e8e41;
 // }
 // </style>
-
-// <h2>Dropdown Menu</h2>
-// <p>Move the mouse over the button to open the dropdown menu.</p>
 
 // <div class="dropdown">
 //   <button class="dropbtn">Dropdown</button>

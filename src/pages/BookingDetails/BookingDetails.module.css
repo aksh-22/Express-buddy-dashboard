@@ -3,11 +3,6 @@
   color: #333333;
 }
 
-.myDropDown {
-  height: 50px;
-  overflow: auto;
-}
-
 .heading {
   font-size: 1.8rem;
   display: inline-block;

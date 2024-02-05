@@ -77,6 +77,17 @@ export default function Sidebar() {
           </li>
         ))}
       </ul>
+      {/* <p className={styles.miniText}>Switch to:</p>
+      <div className={styles.rectangle}>
+        <Link to="">
+          <img
+            className={styles.valetLogo}
+            src={ExpressDeliveryLogo}
+            alt="Express Delivery Logo"
+          />
+        </Link>
+      </div>
+      <hr className={styles.sideRule} /> */}
     </div>
   );
 }

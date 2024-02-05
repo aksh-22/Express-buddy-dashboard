@@ -6,10 +6,11 @@ import {
   useLocation,
   useNavigation,
   useParams,
+  useSearchParams,
 } from "react-router-dom";
 import DotLoader from "react-spinners/DotLoader";
 import Eye from "src/assets/svg/Eye.svg";
-import BookingHeader from "src/components/BookingHeader/BookingHeader";
+import BookingHeader from "src/components/Headers/BookingHeader";
 import Button from "src/components/Button/Button";
 import Capitalize from "src/utils/Capitalize";
 import CapitalizeConsecutive from "src/utils/CapitalizeConsecutive";
@@ -21,6 +22,7 @@ import { useState } from "react";
 import Cancel from "src/assets/svg/cancel.svg";
 import Search from "src/assets/svg/search.svg";
 import ToggleSwitch from "src/components/ToggleSwitch/ToggleSwitch";
+import Pagination from "src/components/Pagination/Pagination";
 
 const override = {
   display: "block",
@@ -33,6 +35,13 @@ export default function Bookings() {
   const param = useParams();
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  // const [searchParam, setSearchParam] = useSearchParams({
+  //   type: "",
+  //   bookingType: "",
+  //   status: "PENDING",
+  //   search: "",
+  //   page: "",
+  // });
 
   const renderStatus = (elem: any) => {
     switch (elem.status) {
@@ -79,6 +88,8 @@ export default function Bookings() {
   //   console.log(details);
   // };
 
+  console.log(bookingList?.meta);
+
   const orderId = 21312312312312;
   const vehicleType = "Automatic";
 
@@ -106,8 +117,8 @@ export default function Bookings() {
               aria-label="Loading Spinner"
               data-testid="loader"
             />
-          ) : bookingList.length ? (
-            bookingList?.map((elem: any) => (
+          ) : bookingList?.data?.bookings.length ? (
+            bookingList?.data?.bookings?.map((elem: any) => (
               <div key={elem._id}>
                 <ul className={classes.listContainer}>
                   <li>#{elem.BookingId}</li>
@@ -471,6 +482,16 @@ export default function Bookings() {
           )}
         </>
       )}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "end",
+          alignItems: "center",
+          margin: "1rem 1rem 2rem 0rem",
+        }}
+      >
+        <Pagination />
+      </div>
     </div>
   );
 }

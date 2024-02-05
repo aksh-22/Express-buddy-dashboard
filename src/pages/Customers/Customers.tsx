@@ -1,3 +1,5 @@
+import CustomerHeader from "src/components/Headers/CustomerHeader";
+
 export default function Customers() {
-  return <p>Customer</p>;
+  return <CustomerHeader />;
 }
