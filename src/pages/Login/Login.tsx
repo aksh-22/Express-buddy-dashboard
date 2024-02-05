@@ -25,12 +25,6 @@ export default function Login() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  // const [formData, setFormData] = useState({ email: "", password: "" });
-
-  // function handleFormData(e) {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // }
-
   async function handleSubmit(e: any) {
     try {
       setIsLoading(true);
@@ -45,12 +39,6 @@ export default function Login() {
 
       dispatch(setAuth(true));
       navigate("dashboard");
-
-      // setTimeout(() => {
-      //   dispatch(setAuth(true));
-      //   navigate("dashboard");
-      //   setIsLoading(false);
-      // }, 5000);
     } catch (error: any) {
       setIsLoading(false);
     }
@@ -66,8 +54,6 @@ export default function Login() {
           type="email"
           placeholder="Username"
           name="email"
-          // value={formData.email}
-          // onChange={handleFormData}
           defaultValue="admin2@gmail.com"
         />
         <Input
@@ -75,8 +61,6 @@ export default function Login() {
           type="password"
           placeholder="Password"
           name="password"
-          // value={formData.password}
-          // onChange={handleFormData}
           defaultValue="System@123"
         />
         <div className={styles.checkLabel}>

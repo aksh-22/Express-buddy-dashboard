@@ -3,6 +3,11 @@
   color: #333333;
 }
 
+.myDropDown {
+  height: 50px;
+  overflow: auto;
+}
+
 .heading {
   font-size: 1.8rem;
   display: inline-block;
@@ -67,18 +72,6 @@
   margin-bottom: 1rem;
 }
 
-.btnSave {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  border: 1.5px solid #000;
-  transition: 0.5s;
-}
-
-.btnSave:hover {
-  background-color: #000;
-  color: #fff;
-}
-
 .sideAlign {
   display: flex;
   flex-direction: row;
@@ -121,17 +114,22 @@
   margin: 1rem 0;
 }
 
-.btnCancel {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  border: 1.5px solid #d01c30;
-  background: transparent;
-  margin: 1rem 2rem;
-  color: #d01c30;
-  transition: 0.5s;
+.textArea {
+  grid-column: 1/3;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+  border: 1px solid #9a9a9a;
+  resize: none;
+  margin: 1rem 0;
 }
 
-.btnCancel:hover {
-  background: #d01c30;
-  color: #fff;
+.statusSelect {
+  width: 33rem;
+  background: #fff;
+  border: 1px solid #9a9a9a;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  margin: 1rem 0;
 }

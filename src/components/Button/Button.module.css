@@ -79,3 +79,38 @@
   background-color: #333333;
   color: #fff;
 }
+
+.btnAdd {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: 0.3s;
+  border: 1.5px solid #000;
+  color: #000;
+  cursor: pointer;
+}
+
+.btnAdd:hover:enabled {
+  background-color: #000;
+  color: #fff;
+}
+
+.btnAdd:disabled {
+  border: 1.5px solid #9e9a9a;
+  color: #9e9a9a;
+  cursor: no-drop;
+}
+
+.btnCancel {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1.5px solid #d01c30;
+  background: transparent;
+  margin: 1rem 2rem;
+  color: #d01c30;
+  transition: 0.5s;
+}
+
+.btnCancel:hover {
+  background: #d01c30;
+  color: #fff;
+}
