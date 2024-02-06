@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classes from "./CustomerDetails.module.css";
 import { MdOutlineEditOff } from "react-icons/md";
 import Edit from "src/assets/svg/edit.svg";
@@ -7,7 +7,7 @@ import Button from "src/components/Button/Button";
 import Input from "src/components/Input/Input";
 
 export default function CustomerDetails() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isEditGeneral, setIsEditGeneral] = useState(false);
 
   const handleEditGeneral = () => {

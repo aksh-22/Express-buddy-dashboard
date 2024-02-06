@@ -1,3 +1,9 @@
+import RatingHeader from "src/components/Headers/RatingHeader/RatingHeader";
+
 export default function Ratings() {
-  return <div>Ratings</div>;
+  return (
+    <div>
+      <RatingHeader />
+    </div>
+  );
 }

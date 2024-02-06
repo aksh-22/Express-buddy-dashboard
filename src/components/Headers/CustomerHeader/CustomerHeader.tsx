@@ -6,7 +6,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import Eye from "src/assets/svg/Eye.svg";
 
 import { useState } from "react";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import ToggleSwitch from "../../ToggleSwitch/ToggleSwitch";
 
 export default function BookingHeader() {
   const [search, setSearch] = useState("");

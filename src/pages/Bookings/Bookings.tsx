@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import DotLoader from "react-spinners/DotLoader";
 import Eye from "src/assets/svg/Eye.svg";
-import BookingHeader from "src/components/Headers/BookingHeader";
+import BookingHeader from "src/components/Headers/BookingHeader/BookingHeader";
 import Button from "src/components/Button/Button";
 import Capitalize from "src/utils/Capitalize";
 import CapitalizeConsecutive from "src/utils/CapitalizeConsecutive";

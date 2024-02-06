@@ -2,8 +2,8 @@ import Search from "src/assets/svg/search.svg";
 import Filter from "src/assets/svg/filter.svg";
 import classes from "./BookingHeader.module.css";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import Status from "../Status/Status";
+import ToggleSwitch from "../../ToggleSwitch/ToggleSwitch";
+import Status from "../../Status/Status";
 
 import { useEffect, useState } from "react";
 

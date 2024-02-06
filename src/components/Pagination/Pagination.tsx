@@ -54,6 +54,7 @@ export default function Pagination() {
         {bookingList?.meta?.totalCount
           ? pages?.map((elem) => (
               <span
+                key={elem}
                 onClick={() =>
                   elem !== 1
                     ? setSearchParam({ page: `${elem}` })

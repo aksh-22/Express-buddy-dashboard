@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { bookingDetailsApi } from "src/api/booking.service";
 import Edit from "src/assets/svg/edit.svg";
 import BookingInfoBox from "src/components/AddressBox/AddressBox";
@@ -20,7 +20,7 @@ export default function BookingDetails() {
   const id = param?.id;
   const [bookingInfo, setBookingInfo] = useState<any>({});
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [isEditInternal, setIsEditInternal] = useState(false);
   const [internalNote, setInternalNote] = useState("");
@@ -118,8 +118,8 @@ export default function BookingDetails() {
     setGeneralData({ ...generalData, [e.target.name]: e.target.value });
   };
 
-  console.log(generalData);
-  console.log("bookingAt:", bookingAt);
+  // console.log(generalData);
+  // console.log("bookingAt:", bookingAt);
 
   return (
     <div>
