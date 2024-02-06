@@ -148,7 +148,7 @@ export default function BookingHeader() {
           <li>$434.00</li>
           <li className={classes.action}>
             <ToggleSwitch />
-            <Link to="">
+            <Link to="customerDetails">
               <img src={Eye} className={classes.eye} alt="Eye Icon" />
             </Link>
           </li>

@@ -25,6 +25,7 @@ import Holidays from "./pages/Settings/Holidays/Holidays";
 import Pricing from "./pages/Settings/Pricing/Pricing";
 import { bookingLoader } from "src/pages/Bookings/booking.loader";
 import BookingDetails from "./pages/BookingDetails/BookingDetails";
+import CustomerDetails from "./pages/CustomerDetails/CustomerDetails";
 
 const router = createBrowserRouter([
   {
@@ -103,6 +104,12 @@ const router = createBrowserRouter([
       {
         path: "customer",
         element: <Customers />,
+        children: [
+          {
+            path: "customerDetails",
+            element: <CustomerDetails />,
+          },
+        ],
       },
       {
         path: "driver",

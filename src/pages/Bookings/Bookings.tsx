@@ -6,7 +6,7 @@ import {
   useLocation,
   useNavigation,
   useParams,
-  useSearchParams,
+  // useSearchParams,
 } from "react-router-dom";
 import DotLoader from "react-spinners/DotLoader";
 import Eye from "src/assets/svg/Eye.svg";
@@ -87,8 +87,6 @@ export default function Bookings() {
   // const handleAssign = (details: object) => {
   //   console.log(details);
   // };
-
-  console.log(bookingList?.meta);
 
   const orderId = 21312312312312;
   const vehicleType = "Automatic";
@@ -485,9 +483,10 @@ export default function Bookings() {
       <div
         style={{
           display: "flex",
-          justifyContent: "end",
+          justifyContent: "space-between",
           alignItems: "center",
-          margin: "1rem 1rem 2rem 0rem",
+          margin: "4rem 1rem",
+          width: "72.7rem",
         }}
       >
         <Pagination />

@@ -2,3 +2,15 @@
   width: 15rem;
   padding: 0.5rem;
 }
+
+.generalInput {
+  margin-top: 0.8rem;
+  margin-bottom: 1.3rem;
+  background: #fff;
+  width: 19rem;
+  padding: 0.7rem;
+  border: none;
+  font-size: 1rem;
+  border: 1px solid #9a9a9a;
+  border-radius: 5px;
+}
