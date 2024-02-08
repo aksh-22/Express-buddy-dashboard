@@ -1,3 +1,9 @@
+import RequestHeader from "src/components/Headers/RequestHeader/RequestHeader";
+
 export default function Requests() {
-  return <div>Requests</div>;
+  return (
+    <div>
+      <RequestHeader />
+    </div>
+  );
 }

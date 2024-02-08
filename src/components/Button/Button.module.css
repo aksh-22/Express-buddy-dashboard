@@ -114,3 +114,83 @@
   background: #d01c30;
   color: #fff;
 }
+
+.btnApply {
+  border: 1px solid #d01c30;
+  color: #d01c30;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  background: transparent;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.btnApply:hover {
+  background: #d01c30;
+  color: #fff;
+}
+
+.btnReset {
+  border: 1px solid #6c757d;
+  color: #6c757d;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  background: transparent;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.btnReset:hover {
+  background: #6c757d;
+  color: #fff;
+}
+
+.sideBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.upload {
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 0.5rem;
+  cursor: no-drop;
+  border-radius: 0.7rem;
+  margin: 2rem;
+}
+
+.collect {
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  margin: 2rem;
+}
+
+.collect:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btnSubmit {
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  background: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  margin-left: 1rem;
+}
+
+.btnSubmit:hover:enabled {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btnSubmit:disabled {
+  border: 1px solid #cd747d;
+  color: #cd747d;
+  cursor: no-drop;
+}

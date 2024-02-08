@@ -26,6 +26,8 @@ import Pricing from "./pages/Settings/Pricing/Pricing";
 import { bookingLoader } from "src/pages/Bookings/booking.loader";
 import BookingDetails from "./pages/BookingDetails/BookingDetails";
 import CustomerDetails from "./pages/CustomerDetails/CustomerDetails";
+import PartnersCurrent from "./pages/PartnersCurrent/PartnersCurrent";
+import PartnersPending from "./pages/PartnersPending/PartnersPending";
 
 const router = createBrowserRouter([
   {
@@ -117,10 +119,22 @@ const router = createBrowserRouter([
           {
             path: "current",
             element: <Current />,
+            children: [
+              {
+                path: "currentDetails",
+                element: <PartnersCurrent />,
+              },
+            ],
           },
           {
             path: "pending",
             element: <Pending />,
+            children: [
+              {
+                path: "pendingDetails",
+                element: <PartnersPending />,
+              },
+            ],
           },
         ],
       },

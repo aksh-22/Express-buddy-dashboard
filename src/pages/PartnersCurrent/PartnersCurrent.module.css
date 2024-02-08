@@ -1,0 +1,269 @@
+.customerContainer {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.container {
+  margin: 1rem 2rem 2rem 2rem;
+  color: #333333;
+  width: 70rem;
+  padding-top: 1rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.sideHeading {
+  color: #d01c30;
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sideHeading:hover {
+  color: #a71d2a;
+}
+
+.sideSpan {
+  margin: 0rem 0.7rem;
+}
+
+.summary {
+  background-color: #f6f6f6;
+  border-radius: 0.4rem;
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(227, 227, 227, 1);
+  -moz-box-shadow: 0px 0px 2px 1px rgba(227, 227, 227, 1);
+  box-shadow: 0px 0px 2px 1px rgba(227, 227, 227, 1);
+}
+
+.summaryHeading {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  display: inline-block;
+}
+
+.summaryBlocks {
+  display: flex;
+  width: 60rem;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  justify-content: space-evenly;
+}
+
+.summaryBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  padding: 0 4rem 1rem 4rem;
+  border: 1px solid #000;
+  border-radius: 0.7rem;
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+
+.summaryBox p strong {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.dueBlock {
+  position: relative;
+  background-color: #ffcccb;
+}
+
+.dueClear {
+  position: absolute;
+  background-color: #ff253a;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  bottom: 0.1rem;
+  right: 0.1rem;
+  cursor: not-allowed;
+  opacity: 0.65;
+  border: none;
+}
+
+.generalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  margin: 1rem 2rem 0 2rem;
+}
+
+.generalTextBox {
+  margin-top: 0.8rem;
+  margin-bottom: 1.3rem;
+  background: #fff;
+  width: 19rem;
+  padding: 0.7rem;
+}
+
+.generalAccount {
+  margin-left: 1rem;
+}
+
+.generalButton {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+}
+
+.generalType {
+  margin-top: 0.8rem;
+  margin-bottom: 1.3rem;
+  background: #fff;
+  width: 20.5rem;
+  padding: 0.7rem;
+  border: none;
+  font-size: 1rem;
+  border: 1px solid #9a9a9a;
+  border-radius: 5px;
+}
+
+.transactionContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transactionEntries {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.transactionOptions {
+  margin: 0rem 0.5rem;
+  border: 1px solid #32a1ce;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.transactionOptions select {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.orderHeaderContainer {
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 0.6fr 0.6fr 1fr 1.2fr 0.7fr 0.9fr 0.5fr 0.6fr;
+  list-style: none;
+  font-size: 0.9rem;
+  margin: 1rem 2rem 0rem 3rem;
+}
+
+.withdrawlHeaderContainer {
+  grid-template-columns: 1fr 1.1fr 1.3fr 0.6fr 0.6fr 1fr 0.6fr;
+}
+
+.log {
+  grid-template-columns: 0.4fr 0.4fr 0.5fr 0.6fr 0.6fr;
+}
+
+.listDataContainer {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.normalRule {
+  margin: 1rem 2rem;
+  border: 0.1px solid #c1c1c1;
+}
+
+.headerRule {
+  margin: 1rem 2rem;
+  border: 1px solid #c1c1c1;
+}
+
+.transactionTotal {
+  background-color: rgba(0, 0, 0, 0.03);
+  margin: 1rem 2rem;
+  padding: 1rem;
+  border-radius: 3px;
+  display: flex;
+  justify-content: end;
+  font-weight: 600;
+}
+
+.transactionTotalContainer {
+  padding-bottom: 0.4rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem 4rem 2rem 4rem;
+  width: 61rem;
+  padding-bottom: 2.7rem;
+}
+
+.prev {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+
+.pages {
+  border: 1px solid #dc3545;
+  background: #dc3545;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.next {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.divide {
+  border: 1px solid #c1c1c1;
+  margin: 0.5rem 2rem 0rem 2rem;
+}
+
+.imgDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem 2rem;
+  row-gap: 1rem;
+}
+
+.image {
+  width: 17rem;
+  height: 10rem;
+  border: 2px solid #c1c1c1;
+  border-radius: 15px;
+}
+
+.image:hover {
+  opacity: 0.4;
+}
+
+.singleImg {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 5.2rem;
+  left: 6.5rem;
+  width: 4rem;
+  height: 4rem;
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.paraImage {
+  margin-bottom: 1rem;
+}

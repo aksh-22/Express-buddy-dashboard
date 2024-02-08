@@ -1,3 +1,9 @@
+import PaidHeader from "src/components/Headers/PaymentHeader/PaidHeader/PaidHeader";
+
 export default function Paid() {
-  return <div>Paid</div>;
+  return (
+    <>
+      <PaidHeader />
+    </>
+  );
 }
