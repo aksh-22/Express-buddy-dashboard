@@ -194,3 +194,17 @@
   color: #cd747d;
   cursor: no-drop;
 }
+
+.saveChanges {
+  color: #fff;
+  border: 1px solid #dc3545;
+  background: #dc3545;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+  border-radius: 0.7rem;
+}
+
+.saveChanges:hover {
+  border: 1px solid #b12735;
+  background: #b12735;
+}

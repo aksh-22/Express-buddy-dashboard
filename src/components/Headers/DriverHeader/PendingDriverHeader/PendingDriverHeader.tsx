@@ -9,7 +9,6 @@ import Button from "src/components/Button/Button";
 
 export default function PendingDriverHeader() {
   const [search, setSearch] = useState("");
-  const [active, setActive] = useState({ approved: true, reject: false });
 
   const handleSearch = (e: any) => {
     setSearch(e.target.value);
@@ -70,51 +69,35 @@ export default function PendingDriverHeader() {
           <li>Action</li>
         </ul>
         <hr className={classes.headerRule} />
-        {active.approved ? (
-          <ul className={classes.listDataContainer}>
-            <li>#1706506164</li>
-            <li>Shashi</li>
-            <li>Khandelwal</li>
-            <li>+65-8963806768</li>
-            <li>Shashi.kum...</li>
-            <li>Automatic</li>
-            <li className={classes.action}>
-              <select style={{ padding: "0.3rem" }}>
-                <option value="Approve">Approve</option>
-                <option value="Reject">Reject</option>
-              </select>
-              <Button btnStyle="btnSubmit" tabStyle="">
-                Submit
-              </Button>
-              <Link to="pendingDetails">
-                <img src={Eye} className={classes.eye} alt="Eye Icon" />
-              </Link>
-            </li>
-          </ul>
-        ) : (
-          <span className={classes.noData}>No data available in table</span>
-        )}
+        <ul className={classes.listDataContainer}>
+          <li>#1706506164</li>
+          <li>Shashi</li>
+          <li>Khandelwal</li>
+          <li>+65-8963806768</li>
+          <li>Shashi.kum...</li>
+          <li>Automatic</li>
+          <li className={classes.action}>
+            <select style={{ padding: "0.3rem" }}>
+              <option value="Approve">Approve</option>
+              <option value="Reject">Reject</option>
+            </select>
+            <Button btnStyle="btnSubmit" tabStyle="">
+              Submit
+            </Button>
+            <Link to="pendingDetails">
+              <img src={Eye} className={classes.eye} alt="Eye Icon" />
+            </Link>
+          </li>
+        </ul>
         <hr className={classes.normalRule} />
-        {active.approved ? (
-          <div className={classes.pagination}>
-            <p>Showing 1 to 1 of 1 entries</p>
-            <div>
-              <span className={classes.prev}>Previous</span>
-              <span className={`${classes.pages} ${classes.pagesActive}`}>
-                1
-              </span>
-              <span className={classes.next}>Next</span>
-            </div>
+        <div className={classes.pagination}>
+          <p>Showing 1 to 1 of 1 entries</p>
+          <div>
+            <span className={classes.prev}>Previous</span>
+            <span className={`${classes.pages} ${classes.pagesActive}`}>1</span>
+            <span className={classes.next}>Next</span>
           </div>
-        ) : (
-          <div className={classes.pagination}>
-            <p>Showing 0 to 0 of 0 entries</p>
-            <div>
-              <span className={classes.prev}>Previous</span>
-              <span className={classes.next}>Next</span>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </>
   );

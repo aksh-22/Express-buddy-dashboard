@@ -1,0 +1,132 @@
+.headerContainer {
+  margin: 1rem 1.5rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+}
+
+.entries {
+  margin-top: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  margin: 0rem 0.5rem;
+  border: 1px solid #32a1ce;
+  border-radius: 0.2rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.options select {
+  border: none;
+  outline: none;
+}
+
+.listHeaderContainer {
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr 0.8fr 1.4fr 0.8fr;
+  list-style: none;
+  font-size: 0.8rem;
+  margin: 1rem 1rem 0rem 0.5rem;
+}
+
+.listDataContainer {
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr 0.8fr 1.4fr 0.8fr;
+  list-style: none;
+  font-size: 0.8rem;
+  margin: 1rem 1rem 0rem 0.5rem;
+}
+
+.headerRule {
+  margin: 1rem 0rem;
+  border: 1px solid #c1c1c1;
+}
+
+.normalRule {
+  margin: 1rem 0rem;
+  border: 0.5px solid #c1c1c1;
+}
+
+.headerLink {
+  margin-left: 3.2rem;
+}
+
+.reset {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #d01c30;
+}
+
+.method {
+  font-size: 10px;
+  font-weight: 600;
+  width: 1.4rem;
+  height: 0.7rem;
+  color: #fff;
+  background: #757575;
+  padding: 0.2rem 0.3rem;
+  border-radius: 3px;
+}
+
+.status {
+  font-size: 11px;
+  font-weight: 600;
+  width: 1.2rem;
+  height: 0.7rem;
+  color: #fff;
+  background: #28a745;
+  padding: 0.2rem 0.3rem;
+  border-radius: 3px;
+}
+
+.view {
+  background: #9a9a9a;
+  border-radius: 50%;
+  padding: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.view:hover {
+  background: #d01c30;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0rem 2rem 0rem;
+  width: 72rem;
+  padding-bottom: 2.7rem;
+}
+
+.prev {
+  border: 1px solid #343a40;
+  padding: 0.5rem 1rem;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+
+.pages {
+  color: #343a40;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid #343a40;
+}
+
+.pagesActive {
+  color: #fff;
+  border: 1px solid #dc3545;
+  background: #dc3545;
+}
+
+.next {
+  border: 1px solid #343a40;
+  padding: 0.5rem 1rem;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}

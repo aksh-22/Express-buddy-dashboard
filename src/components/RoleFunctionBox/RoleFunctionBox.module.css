@@ -1,0 +1,17 @@
+.functionBox {
+  display: flex;
+  align-items: center;
+}
+
+.boxPara {
+  width: 22rem;
+}
+
+.buttonText {
+  margin-left: 1rem;
+}
+
+.rule {
+  margin: 1rem 0;
+  border: 0.1px solid #e9e6e6;
+}

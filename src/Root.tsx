@@ -28,6 +28,7 @@ import BookingDetails from "./pages/BookingDetails/BookingDetails";
 import CustomerDetails from "./pages/CustomerDetails/CustomerDetails";
 import PartnersCurrent from "./pages/PartnersCurrent/PartnersCurrent";
 import PartnersPending from "./pages/PartnersPending/PartnersPending";
+import RequestDetails from "./pages/RequestDetails/RequestDetails";
 
 const router = createBrowserRouter([
   {
@@ -231,6 +232,12 @@ const router = createBrowserRouter([
       {
         path: "requests",
         element: <Requests />,
+        children: [
+          {
+            path: "requestDetails",
+            element: <RequestDetails />,
+          },
+        ],
       },
     ],
   },

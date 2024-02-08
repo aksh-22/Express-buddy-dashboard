@@ -3,6 +3,7 @@ import Button from "src/components/Button/Button";
 import { MdDelete } from "react-icons/md";
 import { SlRefresh } from "react-icons/sl";
 import { IoMdArrowRoundForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 export default function RequestHeader() {
   return (
@@ -87,7 +88,9 @@ export default function RequestHeader() {
           <li>113ms</li>
           <li>6th February 2024, 5:24:34 PM</li>
           <li>
-            <IoMdArrowRoundForward className={classes.view} />
+            <Link to="requestDetails">
+              <IoMdArrowRoundForward className={classes.view} />
+            </Link>
           </li>
         </ul>
         <hr className={classes.normalRule} />

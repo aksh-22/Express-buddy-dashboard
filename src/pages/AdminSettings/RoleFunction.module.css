@@ -1,0 +1,29 @@
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.headerContainer {
+  margin: 1rem 1.5rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+}
+
+.box {
+  border: 1px solid #000;
+  margin: 1rem 0rem;
+  padding: 2rem;
+}
+
+.info {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.infoIcon {
+  position: absolute;
+  left: 10rem;
+  top: 0.01rem;
+}
